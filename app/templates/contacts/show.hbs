@@ -9,3 +9,12 @@
   <span>{{model.name}}</span>
 </p>
 
+<strong>Notes:</strong>
+
+{{model.notes}}
+<p>
+  {{#each note in model.notes}}
+    note: {{note}}
+  {{/each}}
+</p>
+
