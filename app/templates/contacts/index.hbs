@@ -1,0 +1,42 @@
+<h1>Contacts list</h1>
+
+<p>
+  {{link-to "New Contact" "contacts.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |contact|}}
+        <tr>
+          <td>
+            {{contact.name}}
+          </td>
+          <td>
+            {{link-to "Edit" "contacts.edit" contact}}
+          </td>
+          <td>
+            {{link-to "Show" "contacts.show" contact}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" contact}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Contacts found
+  </p>
+{{/if}}

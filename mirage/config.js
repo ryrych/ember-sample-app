@@ -1,5 +1,21 @@
 export default function() {
 
+  this.namespace = 'api';
+
+  this.get('/contacts');
+  this.get('/contacts/:id');
+  this.post('/contacts');
+  this.del('/contacts/:id');
+  this.put('/contacts/:id');
+  this.patch('/contacts/:id');
+
+  this.get('/notes');
+  this.get('/notes/:id');
+  this.post('/notes');
+  this.del('/notes/:id');
+  this.put('/notes/:id');
+  this.patch('/notes/:id');
+
   // These comments are here to help you get started. Feel free to delete them.
 
   /*

@@ -1,0 +1,42 @@
+<h1>Notes list</h1>
+
+<p>
+  {{link-to "New Note" "notes.new" }}
+</p>
+
+{{#if model.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Content
+        </th>
+        <th colspan="3">
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |note|}}
+        <tr>
+          <td>
+            {{note.content}}
+          </td>
+          <td>
+            {{link-to "Edit" "notes.edit" note}}
+          </td>
+          <td>
+            {{link-to "Show" "notes.show" note}}
+          </td>
+          <td>
+            <a href="#" {{action "remove" note}}>Remove</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p id="blankslate">
+    No Notes found
+  </p>
+{{/if}}
